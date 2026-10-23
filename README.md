@@ -7,7 +7,7 @@ Site one-page d’Angélica (« J’humanise votre communication »).
 | `site/` | **Site de production**, publié par Vercel (HTML/CSS/JS statiques, sans dépendance ni étape de build). |
 | `index.html`, `assets/`, `captures/` | Maquette de référence et images sources, conservées pour comparaison. |
 | `BRIEF.md` | Brief de développement. |
-| `vercel.json` | Configuration Vercel : publie `site/` et définit les en-têtes de cache et de sécurité. |
+| `vercel.json` | Configuration Vercel : publie `site/`, lance `outils/vercel-build.sh` et définit les en-têtes de cache et de sécurité. |
 
 ## Contenu de `site/`
 
@@ -37,17 +37,12 @@ python3 -m http.server 8000 --directory site
 1. Sur vercel.com : **Add New… → Project**, puis importer le dépôt GitHub `MarioLeZinZin/Acilegna`.
 2. Laisser les réglages proposés : le `vercel.json` à la racine choisit le preset « Other », sans commande de build, et publie le dossier `site/`. Ne pas changer le « Root Directory ».
 3. Cliquer sur **Deploy**. Chaque push sur `main` redéploie ensuite le site automatiquement.
-4. Ajouter le domaine définitif dans **Settings → Domains**, puis remplacer l’adresse provisoire (voir ci-dessous).
+4. L’adresse du site est celle de Vercel, `https://acilegna.vercel.app`. Si Vercel en attribue une autre, le script `outils/vercel-build.sh` la reporte automatiquement dans les balises canonical, Open Graph, JSON-LD, `robots.txt` et `sitemap.xml` à chaque déploiement.
 
 Les déploiements de prévisualisation (branches autres que `main`) ne sont pas indexés par les moteurs de recherche. Si Vercel Web Analytics ou Speed Insights est activé, il faudra mettre à jour le paragraphe « Données personnelles » des mentions légales, qui indique qu’aucun outil de mesure d’audience n’est utilisé.
 
 ## À compléter avant la mise en ligne
 
-- [ ] **Domaine** : remplacer `https://domaine-a-preciser.example` par l’adresse définitive (domaine personnalisé ou `xxx.vercel.app`) dans `site/index.html`, `site/mentions-legales.html`, `site/robots.txt` et `site/sitemap.xml` (balises canonical, Open Graph et JSON-LD).
-- [ ] Objectif de la mission **Châlons Sarry Basket**.
-- [ ] Objectif de la mission **Jeune Chambre économique de Châlons Agglo**.
-- [ ] **Période** de mesure des chiffres.
-- [ ] **Client** de la 3e carte de chiffres (32,7 K vues, +7 700 %).
 - [ ] Vérifier l’attribution des deux autres cartes de chiffres.
 - [ ] Mentions légales : statut, SIRET, téléphone de l’hébergeur (Vercel n’en publie pas officiellement).
 - [ ] Photo et captures Instagram en haute définition si possible. Pour les intégrer, remplacer les fichiers de `assets/` (mêmes noms) puis relancer `python3 outils/convertir-images.py assets site/assets/img`.

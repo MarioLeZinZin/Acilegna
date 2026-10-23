@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://domaine-a-preciser.example/sitemap.xml
+Sitemap: https://acilegna.vercel.app/sitemap.xml
