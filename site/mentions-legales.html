@@ -23,6 +23,10 @@
 <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/great-vibes-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+/* Animations : activées avant le premier rendu (sauf prefers-reduced-motion), retirées si le script principal ne se charge pas */
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('ac-motion'); setTimeout(function () { if (!window.acMotion) document.documentElement.classList.remove('ac-motion'); }, 3000); }
+</script>
 <link rel="stylesheet" href="assets/css/acilegna.css">
 <script src="assets/js/acilegna.js" defer></script>
 </head>
@@ -52,25 +56,25 @@
 <main class="ac-legal">
 <div class="ac-wrap">
 <div class="ac-legal-in">
-<a class="ac-link" href="/">Retour à l’accueil</a>
-<h1 class="ac-h2 ac-legal-title">Mentions légales</h1>
-<p class="ac-legal-lead">Informations sur l’éditeur et l’hébergeur du site, conformément à l’article&nbsp;6 de la loi n°&nbsp;2004-575 du 21&nbsp;juin 2004 pour la confiance dans l’économie numérique.</p>
+<a class="ac-link" href="/" data-reveal="up">Retour à l’accueil</a>
+<h1 class="ac-h2 ac-legal-title" data-reveal>Mentions légales</h1>
+<p class="ac-legal-lead" data-reveal>Informations sur l’éditeur et l’hébergeur du site, conformément à l’article&nbsp;6 de la loi n°&nbsp;2004-575 du 21&nbsp;juin 2004 pour la confiance dans l’économie numérique.</p>
 
-<section class="ac-legal-sec" aria-labelledby="ac-legal-editeur">
+<section data-reveal class="ac-legal-sec" aria-labelledby="ac-legal-editeur">
 <h2 id="ac-legal-editeur">Éditeur du site</h2>
 <dl class="ac-legal-list">
 <div><dt>Marque</dt><dd>Acilegna</dd></div>
 <div><dt>Responsable</dt><dd>Angélica Talata Benivo</dd></div>
 <div><dt>Statut</dt><dd><span class="ac-todo">[Statut à préciser]</span></dd></div>
 <div><dt>SIRET</dt><dd><span class="ac-todo">[SIRET à préciser]</span></dd></div>
-<div><dt>Adresse</dt><dd>7 chemin du Barrage, <span class="ac-todo">[Code postal et ville à préciser]</span></dd></div>
+<div><dt>Adresse</dt><dd>7 chemin du Barrage, 51000 Châlons-en-Champagne</dd></div>
 <div><dt>Téléphone</dt><dd><a href="tel:+33616321980">06 16 32 19 80</a></dd></div>
 <div><dt>E-mail</dt><dd><a href="mailto:angelica.talata.benivo@gmail.com">angelica.talata.benivo@gmail.com</a></dd></div>
 <div><dt>Directrice de la publication</dt><dd>Angélica Talata Benivo</dd></div>
 </dl>
 </section>
 
-<section class="ac-legal-sec" aria-labelledby="ac-legal-hebergeur">
+<section data-reveal class="ac-legal-sec" aria-labelledby="ac-legal-hebergeur">
 <h2 id="ac-legal-hebergeur">Hébergement</h2>
 <dl class="ac-legal-list">
 <div><dt>Hébergeur</dt><dd>Vercel Inc. (<a href="https://vercel.com/">vercel.com</a>)</dd></div>
@@ -79,20 +83,20 @@
 </dl>
 </section>
 
-<section class="ac-legal-sec" aria-labelledby="ac-legal-propriete">
+<section data-reveal class="ac-legal-sec" aria-labelledby="ac-legal-propriete">
 <h2 id="ac-legal-propriete">Propriété intellectuelle</h2>
 <p>Les textes, le logo, les photographies et la mise en page de ce site appartiennent à Angélica Talata Benivo, éditrice du site sous la marque Acilegna, sauf mention contraire. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
 <p>Les aperçus de comptes Instagram présentés dans la section Réalisations restent la propriété de leurs titulaires respectifs. Ils sont reproduits à titre de références professionnelles.</p>
 </section>
 
-<section class="ac-legal-sec" aria-labelledby="ac-legal-donnees">
+<section data-reveal class="ac-legal-sec" aria-labelledby="ac-legal-donnees">
 <h2 id="ac-legal-donnees">Données personnelles</h2>
 <p>Ce site ne dépose aucun cookie, n’utilise aucun outil de mesure d’audience et ne contient pas de formulaire. Les polices de caractères sont hébergées avec le site&nbsp;: aucune donnée de navigation n’est transmise à un autre service que l’hébergeur.</p>
 <p>Le site est hébergé aux États-Unis par Vercel, qui peut conserver des journaux techniques (adresse IP, date et heure de connexion) pour assurer la sécurité et le bon fonctionnement du service. Ces transferts sont encadrés par le Data Privacy Framework UE–États-Unis, auquel Vercel a adhéré (voir sa <a href="https://vercel.com/legal/privacy-policy">politique de confidentialité</a>).</p>
 <p>Les informations que vous transmettez par e-mail ou par téléphone servent uniquement à répondre à votre demande. Conformément au Règlement général sur la protection des données (RGPD), vous pouvez demander l’accès à ces données, leur rectification ou leur effacement en écrivant à <a href="mailto:angelica.talata.benivo@gmail.com">angelica.talata.benivo@gmail.com</a>. Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr/">cnil.fr</a>).</p>
 </section>
 
-<section class="ac-legal-sec" aria-labelledby="ac-legal-credits">
+<section data-reveal class="ac-legal-sec" aria-labelledby="ac-legal-credits">
 <h2 id="ac-legal-credits">Crédits</h2>
 <p>Polices de caractères&nbsp;: Fraunces (Undercase Type), Great Vibes (Robert Leuschke) et Montserrat (Julieta Ulanovsky), sous licence SIL Open Font License&nbsp;1.1.</p>
 </section>
@@ -101,7 +105,7 @@
 </main>
 
 <footer class="ac-footer">
-<div class="ac-wrap ac-footer-in">
+<div class="ac-wrap ac-footer-in" data-reveal-group>
 <div>
 <a class="ac-wordmark" href="/">Acilegna</a>
 <p class="ac-footer-tag">J’humanise votre communication</p>

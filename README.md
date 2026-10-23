@@ -25,6 +25,13 @@ Pour l’aperçu en local :
 python3 -m http.server 8000 --directory site
 ```
 
+## Animations
+
+- **Arrivée** : « Salut, je suis » s’écrit, le nom et l’accroche montent en fondu, le cercle et le portrait apparaissent, puis les perles une à une et leur lente flottaison.
+- **Au défilement** : chaque bloc apparaît une seule fois (`data-reveal` pour un élément, `data-reveal-group` pour des enfants décalés). Les accents manuscrits s’écrivent, les étiquettes se posent sur la machine à écrire, le fil se tend et les tirages tombent puis se balancent, les chiffres comptent jusqu’à leur valeur, le logo pivote en place.
+- **Navigation** : barre de lecture dorée sous l’en-tête, ombre de l’en-tête au défilement, lien de la section en cours surligné, liens du menu mobile en cascade, fondu entre l’accueil et les mentions légales.
+- Avec `prefers-reduced-motion`, rien ne bouge : la page est exactement la maquette. L’état final de chaque animation est le style de la maquette.
+
 ## Déploiement sur Vercel
 
 1. Sur vercel.com : **Add New… → Project**, puis importer le dépôt GitHub `MarioLeZinZin/Acilegna`.
@@ -42,5 +49,5 @@ Les déploiements de prévisualisation (branches autres que `main`) ne sont pas 
 - [ ] **Période** de mesure des chiffres.
 - [ ] **Client** de la 3e carte de chiffres (32,7 K vues, +7 700 %).
 - [ ] Vérifier l’attribution des deux autres cartes de chiffres.
-- [ ] Mentions légales : statut, SIRET, code postal et ville, téléphone de l’hébergeur (Vercel n’en publie pas officiellement).
+- [ ] Mentions légales : statut, SIRET, téléphone de l’hébergeur (Vercel n’en publie pas officiellement).
 - [ ] Photo et captures Instagram en haute définition si possible. Pour les intégrer, remplacer les fichiers de `assets/` (mêmes noms) puis relancer `python3 outils/convertir-images.py assets site/assets/img`.
