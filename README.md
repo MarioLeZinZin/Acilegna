@@ -17,6 +17,7 @@ Site one-page d’Angélica (« J’humanise votre communication »).
 - `assets/fonts/` : Fraunces (axes `wght`, `opsz`, `SOFT`, `WONK`), Great Vibes et Montserrat (`wght`) en WOFF2, sous-ensembles latin et latin-ext. Aucune requête vers Google.
 - `assets/img/` : images en AVIF et WebP à plusieurs largeurs (`srcset`), avec un repli PNG/JPEG. Le portrait passe de 714 Ko (PNG) à 40–62 Ko (AVIF).
 - `assets/img/og-image.jpg` : image de partage 1200 × 630.
+- Initiale du titre « Angélica » : le « A » manuscrit du logo, vectorisé depuis `assets/acilegna-logo.png` et intégré dans `acilegna.css` sous forme de police d’un seul glyphe (1,2 Ko, entre les marqueurs `<initiale>`). Le titre reste un vrai texte « Angélica ».
 - Favicons (`favicon.ico`, `assets/icons/`), `site.webmanifest`, `robots.txt`, `sitemap.xml`, données structurées `ProfessionalService` dans `index.html`.
 
 Pour l’aperçu en local :
@@ -27,7 +28,7 @@ python3 -m http.server 8000 --directory site
 
 ## Animations
 
-- **Arrivée** : « Salut, je suis » s’écrit, le nom et l’accroche montent en fondu, le cercle et le portrait apparaissent, puis les perles une à une et leur lente flottaison.
+- **Arrivée** : « Salut, je suis » et le « A » du nom s’écrivent, le nom et l’accroche montent en fondu, le cercle et le portrait apparaissent, puis les perles une à une et leur lente flottaison.
 - **Au défilement** : chaque bloc apparaît une seule fois (`data-reveal` pour un élément, `data-reveal-group` pour des enfants décalés). Les accents manuscrits s’écrivent, les étiquettes se posent sur la machine à écrire, le fil se tend et les tirages tombent puis se balancent, les chiffres comptent jusqu’à leur valeur, le logo pivote en place.
 - **Navigation** : barre de lecture dorée sous l’en-tête, ombre de l’en-tête au défilement, lien de la section en cours surligné, liens du menu mobile en cascade, fondu entre l’accueil et les mentions légales.
 - Avec `prefers-reduced-motion`, rien ne bouge : la page est exactement la maquette. L’état final de chaque animation est le style de la maquette.

@@ -6,6 +6,11 @@
 @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(../fonts/montserrat-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(../fonts/montserrat-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 
+/* <initiale> */
+/* Initiale du titre « Angélica » : le « A » manuscrit du logo, vectorisé (police d’un seul glyphe, métriques verticales de Fraunces pour ne pas changer la hauteur de ligne) */
+@font-face { font-family: "Acilegna Initiale"; font-style: normal; font-weight: 1 1000; font-display: block; src: url(data:font/woff2;base64,d09GMk9UVE8AAASsAAkAAAAAB+wAAARnAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYsvBmAANAE2AiQDCAQGBX4HIBtIByMDwcbBvNUW5C8SeEPSl0fgJ0bwOjmfm6hOhF0rMy/WyInz68fa2797ohYPl0hjLkESkU4XK40hdIbQRHy6WV6YvjbAP/BAi+b+tSd0UZoaAUBJHl1uaWaTz1Bf3WpdP1q+syt0EkAIh5AflXrzyszuXkopKsYikZxNZ/8T4ltXKZGyPxjXORjLgWotbGUJyoCdw9YhGxRW4G/9sLTloIEO907l5H76iyUIokA2GWjsGhju6RvteAyR35N9hhENX+b52FZ9m7/+fa5rLmxzYc3Oa0fIcNYZ8RfAfjNJKRBEk/uAdW7j2+iZpedm7m6RZvyMPDrKXwcrl/Pt46MRilN+HZcIk8EQiIYwheGv+0wEicW8OpEAgmBIpH12cro2Mw3QbxQtGwGI29Doc4yxzrJkr8pWOSiJEozYb/Yei31/D0KLDnWgXWzCYxM12p/4FetlHX20+I3HsBxY2ir1ruSYlj79xE88ksaNMQVCpQAskQ4kUmBYmyZ2kdnuw4QpiMWSkci+rf5eL/jsjIlrfcbf6V/eHz3t+uj4cCz/DUspeXd/ftWcfaQJFfiALF1c1+xznvQ5JplF0Vlyk5UA7ayefT2jwMyllHQeX9ToBLMkcjOi76q8VL1GRInikWVqX+mcMeD6ei83hggA3amLsUbxtz2bxPsMtlQqlMaAJkoCCofDJiRhDDqUnuzB07Yl6EQJX7xlTDy7QWOIlSjhGaqBKI8K/cJp09NwII9D0w8QSc6EXbcWGOxrBjGoRomsKJxknKYPQtJLP9nCdTXXg9jl5dbBdjnc/j3jDiPXfLDENHl4GJccKOaLEt7C12aUBJXuY3uWQw57v/a1RFX2g77dzzLrF2kRhLAgQhQIA9GIArap1LquD909HEEHWZjBbwwQCUBiz+NGPqDuxVY95q4d408xnhqu9MChyYnjMCqggYVD3YltTsP8bN5s/dizeZy7uTzfyklg8fX70KtsNqs1KfZe371+O7Ymo5gBFmAJqJm7qzPwUNKPIT1WozoCykag1Pbx19elw9OG8bXWcAr6Tzc6LcVnNthXLrfL/5b3D0/3lAs9SEMQHQoyYVjD11kYWxdsQSRIQb5qw5Svv8c1hGygXGSopwbXpDVP7mkm2wFaJwA6f2cFtljkb5vtQsmUDkMpUBzHTAWyuXOt1k+wY7+689mzsGRrbey6zbptEK6Aaviqc5NqWsxMCCIMwdBm2mpEW+s4bkRUNkutRDhQwmVMB54ObOEjGav+keGEjK2VxYDQO3Vr+usP8vCcB3cP8jxP8pQneTSdzfO0s11GWiFqi5ahgcCKCfQvcx/FJho1bvefQFapMFW85ThVEVCYwS0qiSoxkB1To7HY73No9Hlq77i1a7PVvDbmZwB4oswLp0NBUowQl+t4LzavxZEvdszIoxeKoRmzLsyyWVWH8J5BhxHbYtgbSX4kR5bDiqp7VPnO9k6jLgOG9egzqkNck1EDpg1gyk5OFGaQPLL6JIYBAAA=) format("woff2"); unicode-range: U+0041; }
+/* </initiale> */
+
 html { scroll-behavior: smooth; }
 body { margin: 0; }
 a { color: #86621F; }
@@ -66,6 +71,8 @@ a:hover { color: #1F1A15; }
 .ac-hero-copy { align-self: center; padding: 64px 0 96px; }
 .ac-hero-hello { font-size: clamp(2.3rem, 3.6vw, 3.3rem); color: var(--encre); }
 .ac-hero-name { margin-top: -.08em; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 650; font-size: clamp(4.6rem, 11vw, 9.6rem); line-height: .95; letter-spacing: -.03em; color: var(--or-titre); }
+.ac-hero-name:has(.ac-hero-initial) { white-space: nowrap; } /* l’initiale (inline-block) ne doit pas créer de coupure dans le mot */
+.ac-hero-initial { display: inline-block; font-family: "Acilegna Initiale", var(--f-titre); font-variation-settings: normal; }
 .ac-hero-tagline { margin-top: 22px; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 500; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.15; color: var(--encre); }
 .ac-hero-lead { margin-top: 18px; max-width: 33rem; font-size: 18px; line-height: 1.65; color: var(--encre-2); text-wrap: pretty; }
 .ac-hero-actions { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; }
@@ -243,6 +250,7 @@ a:hover { color: #1F1A15; }
 @keyframes ac-up { from { opacity: 0; transform: translateY(24px); } }
 @keyframes ac-fade { from { opacity: 0; } }
 @keyframes ac-write { from { clip-path: inset(-50% 115% -50% -15%); } to { clip-path: inset(-50% -15% -50% -15%); } }
+@keyframes ac-write-initial { from { clip-path: inset(-40% 130% -40% -10%); } to { clip-path: inset(-40% -40% -40% -10%); } }
 @keyframes ac-zoom { from { opacity: 0; transform: scale(.94); } }
 @keyframes ac-pop { from { opacity: 0; transform: scale(.85); } }
 @keyframes ac-pearl { from { opacity: 0; transform: scale(.5); } }
@@ -257,6 +265,7 @@ a:hover { color: #1F1A15; }
 /* Héros : séquence d'arrivée au chargement (CSS pur, hors du fil principal) */
 .ac-motion .ac-hero-hello { animation: ac-write 1.2s var(--ease-write) .1s backwards; }
 .ac-motion .ac-hero-name { animation: ac-rise 1.1s var(--ease-out) .25s backwards; }
+.ac-motion .ac-hero-initial { animation: ac-write-initial 1.1s var(--ease-out) .25s backwards; }
 .ac-motion .ac-hero-tagline { animation: ac-rise 1s var(--ease-out) .4s backwards; }
 .ac-motion .ac-hero-lead { animation: ac-rise 1s var(--ease-out) .52s backwards; }
 .ac-motion .ac-hero-actions { animation: ac-rise 1s var(--ease-out) .64s backwards; }
