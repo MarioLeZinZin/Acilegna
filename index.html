@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acilegna, J’humanise votre communication</title>
+<meta name="description" content="Angélica accompagne les entreprises dans leur communication, leurs réseaux sociaux et leur visibilité en ligne.">
+<link rel="icon" href="assets/acilegna-logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..800,0..100,0..1&family=Great+Vibes&family=Montserrat:wght@400..700&display=swap">
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: #86621F; }
+a:hover { color: #1F1A15; }
+
+/* ---------- Jetons (tokens) ---------- */
+.ac-root {
+  --creme: #F7F2EC; --ivoire: #FFFDF9; --papier: #F4ECDF;
+  --or: #D7B66B; --or-fonce: #C9A55A; --or-titre: #A47B33; --or-texte: #86621F;
+  --or-voile: rgba(215, 182, 107, .2); --trait: rgba(164, 123, 51, .26);
+  --encre: #1F1A15; --encre-2: #4B433A; --encre-3: #6B6157;
+  --f-titre: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-script: "Great Vibes", "Snell Roundhand", cursive;
+  --f-texte: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --wrap: 1240px; --gut: clamp(20px, 5vw, 64px);
+  position: relative; overflow-x: clip;
+  font-family: var(--f-texte); font-size: 17px; line-height: 1.7;
+  color: var(--encre); background: var(--creme);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+.ac-root *, .ac-root *::before, .ac-root *::after { box-sizing: border-box; }
+:where(.ac-root) :where(h1, h2, h3, p, figure, blockquote, ul, dl, dd) { margin: 0; }
+:where(.ac-root) :where(ul) { padding: 0; list-style: none; }
+.ac-root ::selection { background: var(--or); color: var(--encre); }
+.ac-root :focus-visible { outline: 2px solid var(--or-titre); outline-offset: 3px; border-radius: 6px; }
+.ac-root section { scroll-margin-top: 84px; }
+.ac-wrap { width: 100%; max-width: calc(var(--wrap) + 2 * var(--gut)); margin: 0 auto; padding-left: var(--gut); padding-right: var(--gut); }
+.ac-serif { font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; }
+.ac-script { font-family: var(--f-script); font-weight: 400; line-height: 1; }
+.ac-h2 { font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 650; font-size: clamp(2.6rem, 5.2vw, 4.6rem); line-height: 1; letter-spacing: -.015em; color: var(--or-titre); text-wrap: balance; }
+.ac-todo { padding: 1px 7px; border-radius: 5px; background: var(--or-voile); border: 1px dashed rgba(134, 98, 31, .55); color: var(--or-texte); font-weight: 600; white-space: nowrap; }
+
+/* ---------- Boutons ---------- */
+.ac-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--or); color: var(--encre); font: 600 15px/1 var(--f-texte); letter-spacing: .01em; text-decoration: none; white-space: nowrap; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), 0 12px 26px -16px rgba(120, 88, 30, .7); transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.ac-btn:hover { background: var(--or-fonce); color: var(--encre); transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), 0 18px 32px -16px rgba(120, 88, 30, .75); }
+.ac-btn:active { transform: translateY(0); }
+.ac-btn--sm { min-height: 44px; padding: 0 20px; font-size: 14px; }
+.ac-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 600; color: var(--encre); text-decoration: underline; text-decoration-color: var(--or); text-decoration-thickness: 2px; text-underline-offset: 7px; transition: color .2s ease, text-underline-offset .2s ease; }
+.ac-link:hover { color: var(--or-texte); text-underline-offset: 4px; }
+
+/* ---------- En-tête ---------- */
+.ac-header { position: sticky; top: 0; z-index: 40; background: rgba(247, 242, 236, .84); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); border-bottom: 1px solid var(--trait); }
+.ac-header-in { display: flex; align-items: center; gap: 20px; min-height: 76px; }
+.ac-wordmark { font-family: var(--f-script); font-size: 40px; line-height: 1; color: var(--or-titre); text-decoration: none; padding: 4px 0; }
+.ac-wordmark:hover { color: var(--or-texte); }
+.ac-nav { display: flex; gap: 4px; margin-left: auto; }
+.ac-nav a { padding: 12px 14px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--encre); text-decoration: none; transition: background-color .2s ease, color .2s ease; }
+.ac-nav a:hover { color: var(--encre); background: var(--or-voile); }
+.ac-menu-btn { display: none; align-items: center; gap: 10px; min-height: 44px; margin-left: auto; padding: 0 16px; border-radius: 999px; border: 1px solid var(--trait); background: var(--ivoire); font: 600 14px/1 var(--f-texte); color: var(--encre); cursor: pointer; }
+.ac-menu-btn svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.ac-menu { display: grid; padding: 4px var(--gut) 20px; border-top: 1px solid var(--trait); }
+.ac-menu a { padding: 14px 0; border-bottom: 1px solid var(--trait); font-family: var(--f-titre); font-variation-settings: "SOFT" 100; font-weight: 500; font-size: 24px; color: var(--encre); text-decoration: none; }
+
+/* ---------- Héros ---------- */
+.ac-hero { position: relative; overflow: hidden; }
+.ac-hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 32px; min-height: 780px; }
+.ac-hero-copy { align-self: center; padding: 64px 0 96px; }
+.ac-hero-hello { font-size: clamp(2.3rem, 3.6vw, 3.3rem); color: var(--encre); }
+.ac-hero-name { margin-top: -.08em; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 650; font-size: clamp(4.6rem, 11vw, 9.6rem); line-height: .95; letter-spacing: -.03em; color: var(--or-titre); }
+.ac-hero-tagline { margin-top: 22px; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 500; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.15; color: var(--encre); }
+.ac-hero-lead { margin-top: 18px; max-width: 33rem; font-size: 18px; line-height: 1.65; color: var(--encre-2); text-wrap: pretty; }
+.ac-hero-actions { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; }
+.ac-hero-visual { position: relative; min-height: 680px; }
+.ac-ring-box { position: absolute; z-index: 1; left: 50%; top: 44%; width: min(560px, 94%); aspect-ratio: 1; translate: -50% -50%; }
+.ac-ring-box--front { z-index: 3; pointer-events: none; }
+.ac-ring-box--front::before { display: none; }
+.ac-ring-box::before { content: ""; position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 253, 249, .95), rgba(255, 253, 249, 0)); }
+.ac-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--or); box-shadow: inset 0 0 0 8px var(--creme), inset 0 0 0 9.5px var(--or); translate: calc(var(--mx, 0) * -5px) calc(var(--my, 0) * -4px); transition: translate .2s linear; }
+.ac-pearls { position: absolute; inset: 0; pointer-events: none; }
+.ac-pearls--back { z-index: 1; translate: calc(var(--mx, 0) * -12px) calc(var(--my, 0) * -9px); }
+.ac-pearls--front { z-index: 3; translate: calc(var(--mx, 0) * 20px) calc(var(--my, 0) * 15px); }
+.ac-pearl { position: absolute; aspect-ratio: 1; border-radius: 50%; scale: 1.45; background: radial-gradient(circle at 34% 30%, #FFF8E4 0 9%, #ECD599 25%, #D3AF5D 58%, #A27A30 100%); box-shadow: 0 1px 2px rgba(110, 80, 25, .32); }
+.ac-portrait { position: absolute; z-index: 2; bottom: 0; left: 50%; translate: -50% 0; height: min(700px, 96%); width: auto; max-width: none; filter: drop-shadow(0 20px 30px rgba(80, 60, 30, .16)); }
+
+/* ---------- Clients ---------- */
+.ac-clients { position: relative; z-index: 3; background: var(--ivoire); border-top: 1px solid var(--trait); border-bottom: 1px solid var(--trait); }
+.ac-clients-in { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 44px; padding-top: 26px; padding-bottom: 26px; }
+.ac-clients-label { font-size: 13px; font-weight: 600; letter-spacing: .03em; color: var(--encre-3); }
+.ac-clients-list { display: flex; flex-wrap: wrap; align-items: center; row-gap: 8px; }
+.ac-clients-list li { display: inline-flex; align-items: center; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 500; font-size: 21px; line-height: 1.3; color: var(--encre); }
+.ac-clients-list li + li::before { content: ""; width: 9px; height: 9px; margin: 0 22px; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #FFF8E4 0 12%, #E2C57F 40%, #A27A30 100%); }
+
+/* ---------- À propos ---------- */
+.ac-about { padding: clamp(84px, 11vw, 150px) 0; }
+.ac-about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.ac-flip { appearance: none; -webkit-appearance: none; display: inline-grid; margin: 0; padding: 0; border: 0; background: none; font: inherit; font-variation-settings: inherit; letter-spacing: inherit; line-height: inherit; color: inherit; cursor: pointer; perspective: 700px; vertical-align: baseline; }
+.ac-flip-in { display: grid; transform-style: preserve-3d; transition: transform .75s cubic-bezier(.3, 1.35, .5, 1); }
+.ac-flip-face { grid-area: 1 / 1; -webkit-backface-visibility: hidden; backface-visibility: hidden; text-decoration: underline; text-decoration-color: var(--or); text-decoration-thickness: 3px; text-underline-offset: 10px; }
+.ac-flip-back { transform: rotateX(180deg); color: var(--encre); }
+.ac-flip:hover .ac-flip-in, .ac-flip:focus-visible .ac-flip-in, .ac-flip[aria-pressed="true"] .ac-flip-in { transform: rotateX(180deg); }
+.ac-flip-hint { margin-top: 14px; font-size: 1.9rem; color: var(--encre-3); }
+.ac-prose { margin-top: 40px; display: grid; gap: 18px; max-width: 38rem; color: var(--encre-2); text-wrap: pretty; }
+.ac-quote { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--trait); max-width: 40rem; }
+.ac-quote p { font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 1.9rem); line-height: 1.38; color: var(--encre); text-wrap: pretty; }
+.ac-about-visual { position: relative; margin-top: 24px; aspect-ratio: 5 / 5.6; }
+.ac-about-aside { position: absolute; left: 2%; top: 0; font-size: clamp(2.2rem, 3vw, 2.8rem); color: var(--encre); }
+.ac-typewriter { position: absolute; left: 0; bottom: 0; width: 100%; height: auto; mix-blend-mode: multiply; }
+.ac-stickers { position: absolute; inset: 0; }
+.ac-sticker { position: absolute; padding: 9px 16px 10px; border-radius: 4px; background: var(--ivoire); border: 1px solid rgba(164, 123, 51, .22); box-shadow: 0 8px 16px -10px rgba(80, 60, 30, .45); font-size: 14px; font-weight: 600; line-height: 1.3; white-space: nowrap; color: var(--encre); rotate: var(--r, 0deg); transition: rotate .35s cubic-bezier(.3, 1.4, .5, 1), translate .35s ease; }
+.ac-sticker::before { content: ""; position: absolute; left: 50%; top: -9px; width: 44px; height: 17px; translate: -50% 0; rotate: -4deg; background: rgba(215, 182, 107, .5); border-left: 1px dashed rgba(255, 255, 255, .6); border-right: 1px dashed rgba(255, 255, 255, .6); }
+.ac-sticker:hover { rotate: 0deg; translate: 0 -4px; }
+
+/* ---------- Réalisations ---------- */
+.ac-work { position: relative; padding: clamp(84px, 10vw, 140px) 0 clamp(70px, 8vw, 110px); background: #F4ECDF url(assets/texture-papier.jpg) repeat; background-size: 512px 512px; border-top: 1px solid var(--trait); }
+.ac-work-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 29rem); gap: 28px 64px; align-items: end; }
+.ac-work-titles { position: relative; padding-bottom: clamp(36px, 4vw, 54px); }
+.ac-work-title { font-size: clamp(3.2rem, 7.4vw, 6.6rem); }
+.ac-work-script { position: absolute; left: clamp(4px, 1vw, 16px); bottom: 0; font-size: clamp(2.4rem, 4.4vw, 4.1rem); color: var(--encre); rotate: -5deg; transform-origin: 0 100%; pointer-events: none; }
+.ac-work-intro { color: var(--encre-2); text-wrap: pretty; }
+.ac-line { position: relative; margin-top: clamp(64px, 8vw, 104px); }
+.ac-rope { position: absolute; left: 0; right: 0; top: 26px; height: 7px; border-radius: 4px; background: repeating-linear-gradient(118deg, #B5966F 0 4px, #8C6E50 4px 6px, #A2835F 6px 10px); box-shadow: 0 5px 6px -3px rgba(70, 50, 30, .3); }
+.ac-prints { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 34px); }
+.ac-print { position: relative; padding-top: 6px; }
+.ac-pin { position: absolute; left: 50%; top: 0; z-index: 2; width: 22px; height: 62px; translate: -50% 0; filter: drop-shadow(0 3px 2px rgba(60, 40, 20, .3)); }
+.ac-print-photo { position: relative; margin-top: 18px; padding: 10px 10px 12px; background: #FFFFFF; box-shadow: 0 2px 4px rgba(60, 45, 25, .1), 0 20px 34px -18px rgba(60, 45, 25, .5); transform-origin: 50% 0; rotate: var(--r, 0deg); }
+.ac-print:hover .ac-print-photo { animation: ac-swing 1.3s ease-in-out; }
+@keyframes ac-swing { 0% { rotate: var(--r, 0deg); } 22% { rotate: calc(var(--r, 0deg) + 4deg); } 50% { rotate: calc(var(--r, 0deg) - 3deg); } 76% { rotate: calc(var(--r, 0deg) + 1.2deg); } 100% { rotate: var(--r, 0deg); } }
+.ac-print-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0; }
+.ac-print figcaption { margin-top: 22px; padding: 0 4px; }
+.ac-print-name { font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 600; font-size: 22px; line-height: 1.15; color: var(--encre); }
+.ac-print-goal { margin-top: 8px; font-size: 14px; line-height: 1.55; color: var(--encre-2); }
+.ac-print-goal strong { display: block; margin-bottom: 2px; font-size: 12px; font-weight: 700; letter-spacing: .03em; color: var(--or-texte); }
+
+/* ---------- Chiffres ---------- */
+.ac-stats { padding: clamp(84px, 10vw, 140px) 0; border-top: 1px solid var(--trait); }
+.ac-stats-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px 48px; }
+.ac-stats-intro { max-width: 29rem; color: var(--encre-2); text-wrap: pretty; }
+.ac-stats-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+.ac-stat { display: flex; flex-direction: column; padding: 30px 30px 28px; border-radius: 22px; background: var(--ivoire); border: 1px solid rgba(215, 182, 107, .5); box-shadow: 0 26px 44px -34px rgba(80, 60, 30, .5); }
+.ac-stat-client { font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 600; font-size: 21px; line-height: 1.2; color: var(--encre); }
+.ac-stat-main { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.ac-stat-num { font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 650; font-size: clamp(3rem, 4.6vw, 4.3rem); line-height: 1; letter-spacing: -.02em; color: var(--or-titre); }
+.ac-stat-unit { font-size: 16px; font-weight: 600; color: var(--encre-2); }
+.ac-trend { display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; padding: 6px 11px; border-radius: 999px; background: var(--or-voile); color: var(--or-texte); font-size: 13px; font-weight: 700; line-height: 1; align-self: flex-start; }
+.ac-trend svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ac-stat-list { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--trait); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+.ac-stat-list dt { font-size: 13px; font-weight: 500; color: var(--encre-3); }
+.ac-stat-list dd { margin-top: 4px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 600; font-size: 25px; line-height: 1.1; color: var(--encre); }
+.ac-stat-list dd span { font-family: var(--f-texte); font-size: 12px; font-weight: 700; color: var(--or-texte); }
+.ac-stat-best { margin-top: auto; padding-top: 22px; font-size: 14px; line-height: 1.5; color: var(--encre-2); }
+.ac-stat-best strong { color: var(--encre); }
+.ac-stats-note { margin-top: 26px; font-size: 13px; color: var(--encre-3); }
+
+/* ---------- Contact ---------- */
+.ac-contact { padding: clamp(84px, 10vw, 140px) 0; background: var(--ivoire); border-top: 1px solid var(--trait); }
+.ac-contact-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.ac-contact-title { font-size: clamp(3.2rem, 7.4vw, 6.6rem); }
+.ac-contact-script { margin-top: 10px; font-size: clamp(2rem, 3.4vw, 3.1rem); line-height: 1.15; color: var(--encre); }
+.ac-contact-text { margin-top: 26px; max-width: 34rem; color: var(--encre-2); text-wrap: pretty; }
+.ac-contact-list { margin-top: 34px; max-width: 44rem; border-top: 1px solid var(--trait); }
+.ac-contact-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; padding: 18px 0; border-bottom: 1px solid var(--trait); }
+.ac-contact-k { flex: 0 0 7rem; font-size: 13px; font-weight: 700; letter-spacing: .02em; color: var(--or-texte); }
+.ac-contact-v { min-width: 0; font-family: var(--f-titre); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 500; font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1.3; color: var(--encre); text-decoration: none; overflow-wrap: anywhere; }
+.ac-contact-v:hover { color: var(--or-texte); }
+.ac-copy { margin-left: auto; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--trait); background: transparent; font: 600 13px/1 var(--f-texte); color: var(--encre-2); cursor: pointer; transition: border-color .2s ease, color .2s ease; }
+.ac-copy:hover { border-color: var(--or-titre); color: var(--encre); }
+.ac-contact-cta { margin-top: 36px; }
+.ac-contact-visual { position: relative; display: grid; place-items: center; }
+.ac-contact-visual::before { content: ""; position: absolute; width: min(420px, 100%); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(247, 242, 236, .95), rgba(247, 242, 236, 0)); }
+.ac-contact-visual img { position: relative; width: min(305px, 80%); height: auto; }
+
+/* ---------- Pied de page ---------- */
+.ac-footer { border-top: 1px solid var(--trait); background: var(--creme); }
+.ac-footer-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 40px; padding-top: 34px; padding-bottom: 34px; }
+.ac-footer-tag { margin-top: 2px; font-size: 13px; color: var(--encre-3); }
+.ac-footer-nav { display: flex; flex-wrap: wrap; gap: 2px; }
+.ac-footer-nav a { padding: 12px; font-size: 14px; color: var(--encre); text-decoration: none; border-radius: 8px; }
+.ac-footer-nav a:hover { background: var(--or-voile); color: var(--encre); }
+.ac-footer-legal { font-size: 13px; color: var(--encre-3); }
+.ac-footer-legal a { color: var(--encre-2); }
+
+/* ---------- Responsive ---------- */
+.ac-menu[hidden] { display: none !important; }
+@media (min-width: 761px) { .ac-menu { display: none; } }
+@media (max-width: 1023px) {
+  .ac-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; min-height: 0; }
+  .ac-hero-copy { padding: 56px 0 28px; }
+  .ac-hero-visual { min-height: 0; height: clamp(440px, 112vw, 660px); }
+  .ac-ring-box { top: 46%; width: min(540px, 88%); }
+  .ac-portrait { height: 94%; }
+  .ac-about-grid, .ac-contact-grid, .ac-work-head { grid-template-columns: minmax(0, 1fr); }
+  .ac-about-visual { width: 100%; max-width: 520px; margin: 8px auto 0; }
+  .ac-prints { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(var(--gut) * -1); padding: 0 var(--gut) 16px; }
+  .ac-prints::-webkit-scrollbar { display: none; }
+  .ac-print { flex: 0 0 min(68vw, 290px); scroll-snap-align: center; }
+  .ac-clients-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 16px; width: 100%; }
+  .ac-clients-list li::before, .ac-clients-list li + li::before { content: ""; flex: none; width: 8px; height: 8px; margin: 0 10px 0 0; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #FFF8E4 0 12%, #E2C57F 40%, #A27A30 100%); }
+  .ac-contact-visual { order: -1; justify-items: start; }
+  .ac-contact-visual::before { display: none; }
+  .ac-contact-visual img { width: min(220px, 60%); }
+}
+@media (max-width: 760px) {
+  .ac-root { font-size: 16px; }
+  .ac-nav, .ac-header-cta { display: none; }
+  .ac-menu-btn { display: inline-flex; }
+  .ac-header-in { min-height: 68px; }
+  .ac-wordmark { font-size: 34px; }
+  .ac-hero-actions .ac-btn { width: 100%; }
+  .ac-clients-in { gap: 12px; }
+  .ac-clients-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ac-clients-list li { font-size: 17px; }
+  .ac-stat { padding: 26px 22px 24px; }
+  .ac-contact-k { flex-basis: 100%; }
+  .ac-copy { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ac-print:hover .ac-print-photo { animation: none; }
+  .ac-flip-in, .ac-sticker, .ac-ring { transition: none; }
+  .ac-pearls--back, .ac-pearls--front, .ac-ring { translate: none; }
+}
+</style>
+</head>
+<body>
+<div class="ac-root">
+
+<header class="ac-header">
+<div class="ac-wrap ac-header-in">
+<a class="ac-wordmark" href="#accueil">Acilegna</a>
+<nav class="ac-nav" aria-label="Navigation principale">
+<a href="#a-propos">À propos</a>
+<a href="#realisations">Réalisations</a>
+<a href="#chiffres">Chiffres</a>
+<a href="#contact">Contact</a>
+</nav>
+<a class="ac-btn ac-btn--sm ac-header-cta" href="#contact">Me contacter</a>
+<button class="ac-menu-btn" type="button" aria-expanded="false" aria-controls="ac-menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"></path></svg>Menu</button>
+</div>
+<nav class="ac-menu" id="ac-menu" aria-label="Menu" hidden>
+<a href="#a-propos">À propos</a>
+<a href="#realisations">Réalisations</a>
+<a href="#chiffres">Chiffres</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="ac-hero" id="accueil">
+<div class="ac-wrap ac-hero-grid">
+<div class="ac-hero-copy">
+<p class="ac-script ac-hero-hello">Salut, je suis</p>
+<h1 class="ac-hero-name">Angélica</h1>
+<p class="ac-hero-tagline">J’humanise votre communication.</p>
+<p class="ac-hero-lead">Communication, réseaux sociaux, digital&nbsp;: j’accompagne les entreprises dans le développement de leur visibilité en ligne.</p>
+<div class="ac-hero-actions">
+<a class="ac-btn" href="#contact">Discutons de votre projet</a>
+<a class="ac-link" href="#realisations">Voir mes réalisations</a>
+</div>
+</div>
+<div class="ac-hero-visual">
+<div class="ac-ring-box" aria-hidden="true">
+<div class="ac-ring"></div>
+<div class="ac-pearls ac-pearls--back"><span class="ac-pearl" style="left: 67.2%; top: 9.3%; width: 3.2%"></span><span class="ac-pearl" style="left: 76.7%; top: 11.3%; width: 3.14%"></span><span class="ac-pearl" style="left: 72%; top: 10.1%; width: 2.8%"></span><span class="ac-pearl" style="left: 75.8%; top: 17.5%; width: 2.71%"></span><span class="ac-pearl" style="left: 83.2%; top: 23.2%; width: 2.67%"></span><span class="ac-pearl" style="left: 81.6%; top: 21.7%; width: 2.53%"></span><span class="ac-pearl" style="left: 30.7%; top: 88.9%; width: 2.2%"></span><span class="ac-pearl" style="left: 50.7%; top: 6.4%; width: 2.15%"></span><span class="ac-pearl" style="left: 17.7%; top: 93%; width: 2.15%"></span><span class="ac-pearl" style="left: 17.2%; top: 93.9%; width: 2.09%"></span><span class="ac-pearl" style="left: 26.6%; top: 86.9%; width: 1.95%"></span><span class="ac-pearl" style="left: 25.4%; top: 89.7%; width: 1.81%"></span><span class="ac-pearl" style="left: 52.8%; top: -1.2%; width: 1.67%"></span><span class="ac-pearl" style="left: 49.8%; top: -1.2%; width: 1.66%"></span><span class="ac-pearl" style="left: 22.4%; top: 96.4%; width: 1.62%"></span><span class="ac-pearl" style="left: 58.5%; top: -5%; width: 1.57%"></span><span class="ac-pearl" style="left: 85%; top: 14.1%; width: 1.57%"></span><span class="ac-pearl" style="left: 92.6%; top: 22.9%; width: 1.53%"></span><span class="ac-pearl" style="left: 14.7%; top: 87.9%; width: 1.5%"></span><span class="ac-pearl" style="left: 19.8%; top: 94.8%; width: 1.49%"></span><span class="ac-pearl" style="left: 28.8%; top: 94.7%; width: 1.43%"></span><span class="ac-pearl" style="left: 48.8%; top: -4%; width: 1.38%"></span><span class="ac-pearl" style="left: 87.6%; top: 32.7%; width: 1.24%"></span><span class="ac-pearl" style="left: 4.6%; top: 53.6%; width: 1.2%"></span><span class="ac-pearl" style="left: 96.5%; top: 42.7%; width: 1.18%"></span><span class="ac-pearl" style="left: 56.4%; top: 3.2%; width: 1.15%"></span><span class="ac-pearl" style="left: 19%; top: 84.5%; width: 1.15%"></span><span class="ac-pearl" style="left: -1.2%; top: 45.8%; width: 1.07%"></span><span class="ac-pearl" style="left: 22.2%; top: 84%; width: 1.04%"></span><span class="ac-pearl" style="left: 29%; top: 84.7%; width: 0.97%"></span><span class="ac-pearl" style="left: 48.9%; top: 2.4%; width: 0.93%"></span><span class="ac-pearl" style="left: 92.9%; top: 28.5%; width: 0.92%"></span><span class="ac-pearl" style="left: 93.1%; top: 39.7%; width: 0.87%"></span><span class="ac-pearl" style="left: 27.6%; top: 95.1%; width: 0.87%"></span><span class="ac-pearl" style="left: 6.2%; top: 46.6%; width: 0.82%"></span><span class="ac-pearl" style="left: 98%; top: 32.8%; width: 0.79%"></span><span class="ac-pearl" style="left: 26%; top: 89%; width: 0.75%"></span><span class="ac-pearl" style="left: 51%; top: 4.6%; width: 0.73%"></span><span class="ac-pearl" style="left: 101.6%; top: 30.8%; width: 0.72%"></span><span class="ac-pearl" style="left: 43.3%; top: -1.4%; width: 0.6%"></span></div>
+</div>
+<img class="ac-portrait" src="assets/angelica-portrait.png" alt="Angélica, souriante, les bras croisés" width="567" height="947">
+<div class="ac-ring-box ac-ring-box--front" aria-hidden="true">
+<div class="ac-pearls ac-pearls--front"><span class="ac-pearl" style="left: 87%; top: 22.1%; width: 2.91%"></span><span class="ac-pearl" style="left: 17.7%; top: 86%; width: 2.31%"></span><span class="ac-pearl" style="left: 88.8%; top: 20.8%; width: 2.06%"></span><span class="ac-pearl" style="left: 42.6%; top: -0.7%; width: 1.65%"></span><span class="ac-pearl" style="left: 5.7%; top: 48.2%; width: 1.5%"></span><span class="ac-pearl" style="left: 2.1%; top: 44.7%; width: 1.33%"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ac-clients" aria-label="Ils m’ont fait confiance">
+<div class="ac-wrap ac-clients-in">
+<p class="ac-clients-label">Ils m’ont fait confiance</p>
+<ul class="ac-clients-list">
+<li>Toyota Châlons</li>
+<li>Châlons Sarry Basket</li>
+<li>JCI Châlons Agglo</li>
+<li>Vanillesens</li>
+<li>Pachir’art</li>
+</ul>
+</div>
+</section>
+
+<section class="ac-about" id="a-propos" aria-labelledby="ac-about-title">
+<div class="ac-wrap ac-about-grid">
+<div class="ac-about-copy">
+<h2 class="ac-h2" id="ac-about-title">Qui est <button class="ac-flip" type="button" aria-pressed="false" aria-label="Acilegna, c’est Angélica à l’envers"><span class="ac-flip-in"><span class="ac-flip-face">Acilegna</span><span class="ac-flip-face ac-flip-back">Angélica</span></span></button>&nbsp;?</h2>
+<p class="ac-script ac-flip-hint">Lisez-le à l’envers…</p>
+<div class="ac-prose">
+<p>Moi, c’est Angélica, entrepreneure de 28&nbsp;ans. Entre deux projets, j’aime m’évader à travers les voyages et le basket, toujours accompagnée de musique. Grande amatrice de cuisine asiatique, je trouve aussi mon équilibre dans les séries… et une affection particulière pour l’univers d’Harry Potter.</p>
+<p>Animée par une véritable passion pour la communication, les réseaux sociaux et le digital, j’ai rapidement compris que ces outils pouvaient être bien plus qu’un simple moyen de communication&nbsp;: un véritable levier de croissance pour les entreprises.</p>
+<p>C’est cette conviction qui m’a naturellement amenée à accompagner les structures dans le développement de leur visibilité en ligne.</p>
+</div>
+<blockquote class="ac-quote"><p>Aujourd’hui, mon objectif est clair&nbsp;: aider les entreprises à mieux communiquer, à gagner en visibilité et à attirer plus de clients grâce à des stratégies simples, efficaces et adaptées à leur réalité.</p></blockquote>
+</div>
+<figure class="ac-about-visual">
+<p class="ac-script ac-about-aside" aria-hidden="true">Entre deux projets…</p>
+<img class="ac-typewriter" src="assets/machine-a-ecrire.png" alt="" width="739" height="600">
+<ul class="ac-stickers" aria-label="Ce qu’Angélica aime entre deux projets">
+<li class="ac-sticker" style="left: 4%; top: 17%; --r: -5deg">Voyages</li>
+<li class="ac-sticker" style="left: 38%; top: 13%; --r: 4deg">Basket</li>
+<li class="ac-sticker" style="left: 68%; top: 21%; --r: -3deg">Musique</li>
+<li class="ac-sticker" style="left: 8%; top: 32%; --r: 3deg">Cuisine asiatique</li>
+<li class="ac-sticker" style="left: 52%; top: 31%; --r: -4deg">Séries</li>
+<li class="ac-sticker" style="left: 64%; top: 43%; --r: 5deg">Harry Potter</li>
+</ul>
+</figure>
+</div>
+</section>
+
+<section class="ac-work" id="realisations" aria-labelledby="ac-work-title">
+<div class="ac-wrap ac-work-head">
+<div class="ac-work-titles">
+<h2 class="ac-h2 ac-work-title" id="ac-work-title">Réalisations</h2>
+<p class="ac-script ac-work-script" aria-hidden="true">Projets et créations</p>
+</div>
+<p class="ac-work-intro">Découvrez quelques-unes de mes créations les plus récentes. Chaque projet a été conçu pour répondre aux besoins spécifiques de la marque, en mettant en avant un contenu original et engageant.</p>
+</div>
+<div class="ac-line">
+<div class="ac-rope" aria-hidden="true"></div>
+<div class="ac-wrap">
+<ul class="ac-prints">
+<li class="ac-print" style="--r: -2deg">
+<svg class="ac-pin" viewBox="0 0 22 62" aria-hidden="true"><rect x="1" y="0" width="20" height="62" rx="5" fill="#E2B7A3"></rect><rect x="1" y="0" width="10" height="62" rx="5" fill="#EECBBB"></rect><path d="M11 3V59" stroke="#C49480" stroke-width="1"></path><rect x="0" y="19" width="22" height="8" rx="2" fill="#B4AEA7"></rect><rect x="0" y="20" width="22" height="2" fill="#E8E5E1"></rect></svg>
+<figure>
+<div class="ac-print-photo"><img src="assets/grille-toyota-chalons.jpg" alt="Aperçu du compte Instagram de Toyota Châlons" width="334" height="452" loading="lazy"></div>
+<figcaption>
+<h3 class="ac-print-name">Toyota Châlons</h3>
+<p class="ac-print-goal"><strong>Objectif</strong>Créer de l’engagement digital pour transformer l’audience en visites en concession.</p>
+</figcaption>
+</figure>
+</li>
+<li class="ac-print" style="--r: 1.6deg">
+<svg class="ac-pin" viewBox="0 0 22 62" aria-hidden="true"><rect x="1" y="0" width="20" height="62" rx="5" fill="#E2B7A3"></rect><rect x="1" y="0" width="10" height="62" rx="5" fill="#EECBBB"></rect><path d="M11 3V59" stroke="#C49480" stroke-width="1"></path><rect x="0" y="19" width="22" height="8" rx="2" fill="#B4AEA7"></rect><rect x="0" y="20" width="22" height="2" fill="#E8E5E1"></rect></svg>
+<figure>
+<div class="ac-print-photo"><img src="assets/grille-pachirart.jpg" alt="Aperçu du compte Instagram de Pachir’art" width="334" height="382" loading="lazy"></div>
+<figcaption>
+<h3 class="ac-print-name">Pachir’art</h3>
+<p class="ac-print-goal"><strong>Objectif</strong>Démocratiser l’art et mettre en lumière des artistes émergents pour générer des ventes.</p>
+</figcaption>
+</figure>
+</li>
+<li class="ac-print" style="--r: -1deg">
+<svg class="ac-pin" viewBox="0 0 22 62" aria-hidden="true"><rect x="1" y="0" width="20" height="62" rx="5" fill="#E2B7A3"></rect><rect x="1" y="0" width="10" height="62" rx="5" fill="#EECBBB"></rect><path d="M11 3V59" stroke="#C49480" stroke-width="1"></path><rect x="0" y="19" width="22" height="8" rx="2" fill="#B4AEA7"></rect><rect x="0" y="20" width="22" height="2" fill="#E8E5E1"></rect></svg>
+<figure>
+<div class="ac-print-photo"><img src="assets/grille-vanillesens.jpg" alt="Aperçu du compte Instagram de Vanillesens" width="426" height="470" loading="lazy"></div>
+<figcaption>
+<h3 class="ac-print-name">Vanillesens</h3>
+<p class="ac-print-goal"><strong>Objectif</strong>Développer la visibilité pour convertir en clients professionnels et particuliers.</p>
+</figcaption>
+</figure>
+</li>
+<li class="ac-print" style="--r: 2.2deg">
+<svg class="ac-pin" viewBox="0 0 22 62" aria-hidden="true"><rect x="1" y="0" width="20" height="62" rx="5" fill="#E2B7A3"></rect><rect x="1" y="0" width="10" height="62" rx="5" fill="#EECBBB"></rect><path d="M11 3V59" stroke="#C49480" stroke-width="1"></path><rect x="0" y="19" width="22" height="8" rx="2" fill="#B4AEA7"></rect><rect x="0" y="20" width="22" height="2" fill="#E8E5E1"></rect></svg>
+<figure>
+<div class="ac-print-photo"><img src="assets/grille-chalons-sarry-basket.jpg" alt="Aperçu du compte Instagram de Châlons Sarry Basket" width="426" height="470" loading="lazy"></div>
+<figcaption>
+<h3 class="ac-print-name">Châlons Sarry Basket</h3>
+<p class="ac-print-goal"><strong>Objectif</strong><span class="ac-todo">[Objectif à préciser]</span></p>
+</figcaption>
+</figure>
+</li>
+<li class="ac-print" style="--r: -1.6deg">
+<svg class="ac-pin" viewBox="0 0 22 62" aria-hidden="true"><rect x="1" y="0" width="20" height="62" rx="5" fill="#E2B7A3"></rect><rect x="1" y="0" width="10" height="62" rx="5" fill="#EECBBB"></rect><path d="M11 3V59" stroke="#C49480" stroke-width="1"></path><rect x="0" y="19" width="22" height="8" rx="2" fill="#B4AEA7"></rect><rect x="0" y="20" width="22" height="2" fill="#E8E5E1"></rect></svg>
+<figure>
+<div class="ac-print-photo"><img src="assets/grille-jci-chalons.jpg" alt="Aperçu du compte Instagram de la Jeune Chambre économique de Châlons Agglo" width="426" height="478" loading="lazy"></div>
+<figcaption>
+<h3 class="ac-print-name">Jeune Chambre économique</h3>
+<p class="ac-print-goal"><strong>Objectif</strong><span class="ac-todo">[Objectif à préciser]</span></p>
+</figcaption>
+</figure>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="ac-stats" id="chiffres" aria-labelledby="ac-stats-title">
+<div class="ac-wrap">
+<div class="ac-stats-head">
+<h2 class="ac-h2" id="ac-stats-title">Quelques chiffres</h2>
+<p class="ac-stats-intro">Des résultats mesurés sur Facebook et Instagram, sur <span class="ac-todo">[période à préciser]</span>.</p>
+</div>
+<div class="ac-stats-grid">
+<article class="ac-stat">
+<h3 class="ac-stat-client">Châlons Sarry Basket</h3>
+<p class="ac-stat-main"><span class="ac-stat-num">363,8&nbsp;K</span><span class="ac-stat-unit">vues</span></p>
+<p class="ac-trend"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"></path></svg>+265&nbsp;%</p>
+<dl class="ac-stat-list">
+<div><dt>Interactions</dt><dd>7,5&nbsp;K<span>+551&nbsp;%</span></dd></div>
+<div><dt>Nouveaux abonnés</dt><dd>+177<span>+82,5&nbsp;%</span></dd></div>
+</dl>
+<p class="ac-stat-best">Publication la plus vue&nbsp;: <strong>108,1&nbsp;K vues</strong></p>
+</article>
+<article class="ac-stat">
+<h3 class="ac-stat-client">Toyota Châlons</h3>
+<p class="ac-stat-main"><span class="ac-stat-num">80,8&nbsp;K</span><span class="ac-stat-unit">vues</span></p>
+<p class="ac-trend"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"></path></svg>+830&nbsp;%</p>
+<dl class="ac-stat-list">
+<div><dt>Interactions</dt><dd>906<span>+806&nbsp;%</span></dd></div>
+<div><dt>Nouveaux abonnés</dt><dd>+73<span>+564&nbsp;%</span></dd></div>
+</dl>
+<p class="ac-stat-best">Publication la plus vue&nbsp;: <strong>18,8&nbsp;K vues</strong></p>
+</article>
+<article class="ac-stat">
+<h3 class="ac-stat-client"><span class="ac-todo">[Client à préciser]</span></h3>
+<p class="ac-stat-main"><span class="ac-stat-num">32,7&nbsp;K</span><span class="ac-stat-unit">vues</span></p>
+<p class="ac-trend"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"></path></svg>+7&nbsp;700&nbsp;%</p>
+<dl class="ac-stat-list">
+<div><dt>Interactions</dt><dd>447<span>+100&nbsp;%</span></dd></div>
+<div><dt>Nouveaux abonnés</dt><dd>+35<span>+100&nbsp;%</span></dd></div>
+</dl>
+</article>
+</div>
+<p class="ac-stats-note">Évolutions calculées par Meta par rapport à la période précédente.</p>
+</div>
+</section>
+
+<section class="ac-contact" id="contact" aria-labelledby="ac-contact-title">
+<div class="ac-wrap ac-contact-grid">
+<div class="ac-contact-copy">
+<h2 class="ac-h2 ac-contact-title" id="ac-contact-title">Contact</h2>
+<p class="ac-script ac-contact-script">Prêt·e à donner vie à votre communication&nbsp;?</p>
+<p class="ac-contact-text">Je serais ravie de discuter de vos projets et de découvrir comment nous pouvons créer ensemble une stratégie adaptée à votre entreprise. N’hésitez pas à me contacter pour en savoir plus ou pour toute demande de collaboration.</p>
+<ul class="ac-contact-list">
+<li><span class="ac-contact-k">Téléphone</span><a class="ac-contact-v" href="tel:+33616321980">06 16 32 19 80</a></li>
+<li><span class="ac-contact-k">E-mail</span><a class="ac-contact-v" href="mailto:angelica.talata.benivo@gmail.com">angelica.talata.benivo@gmail.com</a><button class="ac-copy" type="button" data-copy="angelica.talata.benivo@gmail.com">Copier l’adresse</button></li>
+</ul>
+<div class="ac-contact-cta"><a class="ac-btn" href="mailto:angelica.talata.benivo@gmail.com?subject=Projet%20de%20communication">Écrire un e-mail</a></div>
+</div>
+<div class="ac-contact-visual">
+<img src="assets/acilegna-logo.png" alt="Logo Acilegna, J’humanise votre communication" width="305" height="295">
+</div>
+</div>
+</section>
+
+<footer class="ac-footer">
+<div class="ac-wrap ac-footer-in">
+<div>
+<a class="ac-wordmark" href="#accueil">Acilegna</a>
+<p class="ac-footer-tag">J’humanise votre communication</p>
+</div>
+<nav class="ac-footer-nav" aria-label="Pied de page">
+<a href="#a-propos">À propos</a>
+<a href="#realisations">Réalisations</a>
+<a href="#chiffres">Chiffres</a>
+<a href="#contact">Contact</a>
+</nav>
+<p class="ac-footer-legal">© 2026 Acilegna. <a href="#">Mentions légales</a></p>
+</div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Menu mobile
+  var menuBtn = document.querySelector('.ac-menu-btn');
+  var menu = document.getElementById('ac-menu');
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', function () {
+      var open = menu.hasAttribute('hidden');
+      menu.toggleAttribute('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        menu.setAttribute('hidden', '');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // « Acilegna » se retourne en « Angélica »
+  var flip = document.querySelector('.ac-flip');
+  if (flip) {
+    flip.addEventListener('click', function () {
+      flip.setAttribute('aria-pressed', flip.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    });
+  }
+
+  // Copier l'adresse e-mail
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent, timer;
+    btn.addEventListener('click', function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
+        btn.textContent = 'Adresse copiée';
+        clearTimeout(timer);
+        timer = setTimeout(function () { btn.textContent = label; }, 2400);
+      });
+    });
+  });
+
+  // Parallaxe des perles du héros (souris uniquement)
+  var hero = document.querySelector('.ac-hero');
+  if (hero && !reduce) {
+    var tx = 0, ty = 0, x = 0, y = 0, raf = 0;
+    var tick = function () {
+      x += (tx - x) * 0.08;
+      y += (ty - y) * 0.08;
+      hero.style.setProperty('--mx', x.toFixed(4));
+      hero.style.setProperty('--my', y.toFixed(4));
+      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.0006 ? requestAnimationFrame(tick) : 0;
+    };
+    hero.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = hero.getBoundingClientRect();
+      tx = Math.max(-1, Math.min(1, (e.clientX - r.left) / r.width * 2 - 1));
+      ty = Math.max(-1, Math.min(1, (e.clientY - r.top) / r.height * 2 - 1));
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    hero.addEventListener('pointerleave', function () {
+      tx = 0; ty = 0;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+  }
+})();
+</script>
+</body>
+</html>
